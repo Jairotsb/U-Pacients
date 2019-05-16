@@ -39,7 +39,7 @@ if (isset($_SESSION['Login'])) {
                     if ($prep->rowCount() > 0) :
                         ?>
                         <h6>Seja bem-vindo. Logue com seu e-mail e senha abaixo.</h6>
-                        <form action="logar.php" method="post">
+                        <form action="login.php" method="post">
                             <div class="input-field">
                                 <label>E-mail</label>
                                 <input class="validate" type="email" name="email" oninvalid="this.setCustomValidity('Por favor, preencha esse campo com seu e-mail.')" oninput="setCustomValidity('')" required />
