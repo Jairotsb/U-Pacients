@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2')
+}
+
+* {
+    outline: none
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased
+}
+
+body {
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    border-bottom: 1px solid #1a237e !important;
+    box-shadow: 0 1px 0 0 #1a237e !important
+}
+
+.mt-2 {
+    margin-top: 8px
+}
+
+.m-0 {
+    margin: 7px 0 !important
+}
+
+.mb-0 {
+    margin-bottom: 0
+}
+
+.input-center {
+    text-align: center
+}
