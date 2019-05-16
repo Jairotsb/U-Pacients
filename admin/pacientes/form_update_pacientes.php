@@ -48,8 +48,8 @@ if (!isset($_SESSION['Login'])) {
                 <?php
                 include '../../conexao.php';
 
-                $id = $_GET['pac_id'];
-                $prep = $pdo->prepare("SELECT * FROM pacients WHERE pac_id=:id");
+                $id = $_GET['pat_id'];
+                $prep = $pdo->prepare("SELECT * FROM patients WHERE pat_id=:id");
 
                 $prep->bindValue(':id', $id);
                 $prep->execute();
@@ -62,12 +62,12 @@ if (!isset($_SESSION['Login'])) {
                     <div class="row mb-0">
                         <div class="input-field col s12">
                             <label>ID</label>
-                            <input value="<?= $pac_id ?>" type="text" name="id" readonly>
+                            <input value="<?= $pat_id ?>" type="text" name="id" readonly>
                         </div>
 
                         <div class="input-field col s12">
                             <label>Nome</label>
-                            <input value="<?= $pac_name ?>" placeholder="Nome" type="text" name="pac_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
+                            <input value="<?= $pat_name ?>" placeholder="Nome" type="text" name="pat_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
                         </div>
                     </div>
 

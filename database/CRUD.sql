@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 16, 2019 at 06:58 AM
+-- Generation Time: May 16, 2019 at 07:40 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `AT_23_04`
+-- Database: `CRUD`
 --
 
 -- --------------------------------------------------------
@@ -33,32 +33,16 @@ CREATE TABLE `medics` (
   `med_name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `medics`
---
-
-INSERT INTO `medics` (`med_id`, `med_name`) VALUES
-(6, 'Renan Mattos'),
-(7, 'Lucas Bittencourt');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pacients`
+-- Table structure for table `patients`
 --
 
-CREATE TABLE `pacients` (
-  `pac_id` int(11) NOT NULL,
-  `pac_name` varchar(45) NOT NULL
+CREATE TABLE `patients` (
+  `pat_id` int(11) NOT NULL,
+  `pat_name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `pacients`
---
-
-INSERT INTO `pacients` (`pac_id`, `pac_name`) VALUES
-(5, 'Suzany Silva'),
-(6, 'Marcelo');
 
 -- --------------------------------------------------------
 
@@ -71,15 +55,8 @@ CREATE TABLE `schedule` (
   `sch_date` date NOT NULL,
   `sch_time` time NOT NULL,
   `med_id` int(11) NOT NULL,
-  `pac_id` int(11) NOT NULL
+  `pat_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `schedule`
---
-
-INSERT INTO `schedule` (`sch_id`, `sch_date`, `sch_time`, `med_id`, `pac_id`) VALUES
-(23, '2019-05-13', '04:40:00', 7, 6);
 
 -- --------------------------------------------------------
 
@@ -95,14 +72,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`use_id`, `use_name`, `use_email`, `use_password`) VALUES
-(2, 'Lucas Bittencourt', 'lucasnaja0@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(3, 'Lucão', 'lucao@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa');
-
---
 -- Indexes for dumped tables
 --
 
@@ -113,10 +82,10 @@ ALTER TABLE `medics`
   ADD PRIMARY KEY (`med_id`);
 
 --
--- Indexes for table `pacients`
+-- Indexes for table `patients`
 --
-ALTER TABLE `pacients`
-  ADD PRIMARY KEY (`pac_id`);
+ALTER TABLE `patients`
+  ADD PRIMARY KEY (`pat_id`);
 
 --
 -- Indexes for table `schedule`
@@ -124,7 +93,7 @@ ALTER TABLE `pacients`
 ALTER TABLE `schedule`
   ADD PRIMARY KEY (`sch_id`),
   ADD KEY `medic_fk` (`med_id`),
-  ADD KEY `pacient_fk` (`pac_id`);
+  ADD KEY `pacient_fk` (`pat_id`);
 
 --
 -- Indexes for table `users`
@@ -140,25 +109,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `medics`
 --
 ALTER TABLE `medics`
-  MODIFY `med_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `med_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `pacients`
+-- AUTO_INCREMENT for table `patients`
 --
-ALTER TABLE `pacients`
-  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `patients`
+  MODIFY `pat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `sch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `sch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `use_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `use_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -169,7 +138,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `schedule`
   ADD CONSTRAINT `medic_fk` FOREIGN KEY (`med_id`) REFERENCES `medics` (`med_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `pacient_fk` FOREIGN KEY (`pac_id`) REFERENCES `pacients` (`pac_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `pacient_fk` FOREIGN KEY (`pat_id`) REFERENCES `patients` (`pat_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

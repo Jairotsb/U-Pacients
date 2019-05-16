@@ -105,7 +105,7 @@ if (!isset($_SESSION['Login'])) {
                 $prep = $pdo->prepare(
                     "SELECT * FROM schedule s
                     INNER JOIN medics m on m.med_id = s.med_id
-                    INNER JOIN pacients p on p.pac_id = s.pac_id
+                    INNER JOIN patients p on p.pat_id = s.pat_id
                     WHERE s.sch_id=:id
                     ORDER BY s.sch_date, s.sch_time DESC"
                 );
@@ -116,7 +116,7 @@ if (!isset($_SESSION['Login'])) {
 
                 extract($data[0]);
                 $m_id = $data[0]['med_id'];
-                $p_id = $data[0]['pac_id']
+                $p_id = $data[0]['pat_id']
                 ?>
 
                 <form action="update_agenda.php" method="post">
@@ -155,9 +155,9 @@ if (!isset($_SESSION['Login'])) {
                         </div>
 
                         <div class="input-field col s12 m6">
-                            <select name="pac_id" required>
+                            <select name="pat_id" required>
                                 <?php
-                                $prep = $pdo->prepare("SELECT pac_id, pac_name FROM pacients");
+                                $prep = $pdo->prepare("SELECT pat_id, pat_name FROM patients");
 
                                 if ($prep->execute()) {
                                     $data = $prep->fetchAll();
@@ -165,7 +165,7 @@ if (!isset($_SESSION['Login'])) {
 
                                 foreach ($data as $key) {
                                     extract($key);
-                                    echo "<option value=\"$pac_id\" " . ($pac_id === $p_id ? "selected" : "") . ">$pac_name</option>";
+                                    echo "<option value=\"$pat_id\" " . ($pat_id === $p_id ? "selected" : "") . ">$pat_name</option>";
                                 }
                                 ?>
                             </select>

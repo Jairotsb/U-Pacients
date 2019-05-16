@@ -59,14 +59,14 @@ if (!isset($_SESSION['Login'])) {
                <div class="row mb-0">
                   <div class="input-field col s12">
                      <label>Nome</label>
-                     <input placeholder="Nome" id="nome" type="text" name="pac_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o nome do paciente.')" oninput="setCustomValidity('')" required>
+                     <input placeholder="Nome" id="nome" type="text" name="pat_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o nome do paciente.')" oninput="setCustomValidity('')" required>
                   </div>
                </div>
 
                <input class="btn indigo darken-4" type="submit" value="Registrar" />
             </form>
 
-            <h2 class="flow-text">Usuários</h2>
+            <h2 class="flow-text">Pacientes</h2>
             <table class="centered highlight responsive-table">
                <thead>
                   <tr>

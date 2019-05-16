@@ -3,9 +3,9 @@ try {
     include '../../conexao.php';
 
     $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
-    $name = filter_input(INPUT_POST, 'pac_name', FILTER_DEFAULT);
+    $name = filter_input(INPUT_POST, 'pat_name', FILTER_DEFAULT);
 
-    $prep = $pdo->prepare("UPDATE pacients SET pac_name=:userName WHERE pac_id=:id");
+    $prep = $pdo->prepare("UPDATE patients SET pat_name=:userName WHERE pat_id=:id");
 
     $prep->bindValue(':userName', $name);
     $prep->bindValue(':id', $id);

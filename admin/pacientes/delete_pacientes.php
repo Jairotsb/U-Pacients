@@ -2,9 +2,10 @@
 try {
    include '../../conexao.php';
 
-   $id = $_GET['use_id'];
+   $id = $_GET['pat_id'];
 
-   $prep = $pdo->prepare("DELETE FROM pacients WHERE pac_id='$id'");
+   $prep = $pdo->prepare("DELETE FROM patients WHERE pat_id=:id");
+   $prep->bindValue(':id', $id);
 
    $prep->execute();
 

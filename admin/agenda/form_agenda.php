@@ -140,9 +140,9 @@ if (!isset($_SESSION['Login'])) {
                   </div>
 
                   <div class="input-field col s12 m6">
-                     <select name="pac_id" required>
+                     <select name="pat_id" required>
                         <?php
-                        $prep = $pdo->prepare("SELECT pac_id, pac_name FROM pacients");
+                        $prep = $pdo->prepare("SELECT pat_id, pat_name FROM patients");
 
                         if ($prep->execute()) {
                            $data = $prep->fetchAll();
@@ -150,7 +150,7 @@ if (!isset($_SESSION['Login'])) {
 
                         foreach ($data as $key) {
                            extract($key);
-                           echo "<option value=\"$pac_id\">$pac_name</option>";
+                           echo "<option value=\"$pat_id\">$pat_name</option>";
                         }
                         ?>
                      </select>
