@@ -18,9 +18,17 @@ if (isset($_SESSION['Login'])) {
 </head>
 
 <body>
+    <?php
+    include 'conexao.php';
+    $prep = $pdo->prepare('SELECT * FROM users');
+
+    if ($prep->execute()) {
+        $data = $prep->fetchAll();
+    }
+    ?>
     <nav class="indigo darken-4">
         <div class="nav-wrapper">
-            <a href="./" class="brand-logo center">Login</a>
+            <a href="./" class="brand-logo center"><?php echo $prep->rowCount() > 0 ? 'Login' : 'Registro' ?></a>
         </div>
     </nav>
 
@@ -29,13 +37,6 @@ if (isset($_SESSION['Login'])) {
             <div class="row">
                 <div class="card-panel">
                     <?php
-                    include 'conexao.php';
-                    $prep = $pdo->prepare('SELECT * FROM users');
-
-                    if ($prep->execute()) {
-                        $data = $prep->fetchAll();
-                    }
-
                     if ($prep->rowCount() > 0) :
                         ?>
                         <h6>Seja bem-vindo. Logue com seu e-mail e senha abaixo.</h6>

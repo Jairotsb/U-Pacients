@@ -109,15 +109,15 @@ if (!isset($_SESSION['Login'])) {
             <div class="divider"></div>
 
             <form action="insert_agenda.php" method="post">
-               <div class="row">
+               <div style="margin-top:15px" class="row">
                   <div class="input-field col s12 m6">
                      <label>Data</label>
-                     <input name="date" type="text" class="datepicker" required>
+                     <input placeholder="Data" name="date" type="text" class="datepicker" required>
                   </div>
 
                   <div class="input-field col s12 m6">
                      <label>Horário</label>
-                     <input name="time" type="text" class="timepicker" required>
+                     <input placeholder="Horário" name="time" type="text" class="timepicker" required>
                   </div>
 
                   <div class="input-field col s12 m6">
