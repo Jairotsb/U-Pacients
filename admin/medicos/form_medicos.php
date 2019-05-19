@@ -61,6 +61,10 @@ if (!isset($_SESSION['Login'])) {
                      <label>Nome</label>
                      <input placeholder="Nome" id="nome" type="text" name="med_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o nome do médico.')" oninput="setCustomValidity('')" required>
                   </div>
+                  <div class="input-field col s12">
+                     <label>Especialidade</label>
+                     <input placeholder="Especialidade" id="esp" type="text" name="med_esp" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com a especialidade do médico.')" oninput="setCustomValidity('')" required>
+                  </div>
                </div>
 
                <input class="btn indigo darken-4" type="submit" value="Registrar" />
@@ -71,6 +75,7 @@ if (!isset($_SESSION['Login'])) {
                <thead>
                   <tr>
                      <th>Nome</th>
+                     <th>Especialidade</th>
                      <th>Remover</th>
                      <th>Alterar</th>
                   </tr>

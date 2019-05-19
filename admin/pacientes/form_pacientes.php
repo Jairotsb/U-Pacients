@@ -62,6 +62,24 @@ if (!isset($_SESSION['Login'])) {
                      <input placeholder="Nome" id="nome" type="text" name="pat_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o nome do paciente.')" oninput="setCustomValidity('')" required>
                   </div>
                </div>
+               <div class="row mb-0">
+                  <div class="input-field col s12">
+                     <label>Cpf</label>
+                     <input placeholder="Cpf" id="cpf" type="text" name="pat_cpf" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o cpf do paciente.')" oninput="setCustomValidity('')" required>
+                  </div>
+               </div>
+               <div class="row mb-0">
+                  <div class="input-field col s12">
+                     <label>RG</label>
+                     <input placeholder="RG" id="rg" type="text" name="pat_rg" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o rg do paciente.')" oninput="setCustomValidity('')" required>
+                  </div>
+               </div>
+               <div class="row mb-0">
+                  <div class="input-field col s12">
+                     <label>Idade</label>
+                     <input placeholder="Idade" id="age" type="text" name="pat_age" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com a idade do paciente.')" oninput="setCustomValidity('')" required>
+                  </div>
+               </div>
 
                <input class="btn indigo darken-4" type="submit" value="Registrar" />
             </form>

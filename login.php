@@ -24,3 +24,4 @@ try {
 } catch (PDOException $e) {
     echo 'Um erro ocorreu! Erro: ' . $e->getMessage();
 }
+?>

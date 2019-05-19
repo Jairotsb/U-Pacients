@@ -69,7 +69,20 @@ if (!isset($_SESSION['Login'])) {
                             <label>Nome</label>
                             <input value="<?= $pat_name ?>" placeholder="Nome" type="text" name="pat_name" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
                         </div>
+                        <div class="input-field col s12">
+                            <label>Idade</label>
+                            <input value="<?= $pat_age ?>" placeholder="Idade" type="text" name="pat_age" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
+                        </div>
+                        <div class="input-field col s12">
+                            <label>Rg</label>
+                            <input value="<?= $pat_rg ?>" placeholder="Rg" type="text" name="pat_Rg" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
+                        </div>
+                        <div class="input-field col s12">
+                            <label>Cpf</label>
+                            <input value="<?= $pat_cpf ?>" placeholder="Cpf" type="text" name="pat_cpf" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
+                        </div>
                     </div>
+                  
 
                     <input class="btn indigo darken-4" type="submit" value="Atualizar" />
                     <a href="form_pacientes.php" class="btn indigo darken-4">Cancelar</a>

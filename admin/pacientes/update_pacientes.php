@@ -5,7 +5,7 @@ try {
     $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
     $name = filter_input(INPUT_POST, 'pat_name', FILTER_DEFAULT);
 
-    $prep = $pdo->prepare("UPDATE patients SET pat_name=:userName WHERE pat_id=:id");
+    $prep = $pdo->prepare("UPDATE patients SET pat_name=:userName, pat_rg=:userRg, pat_cpf=:userCpf WHERE pat_id=:id");
 
     $prep->bindValue(':userName', $name);
     $prep->bindValue(':id', $id);
