@@ -7,6 +7,7 @@
  # Objetivo
 
  - O projeto for desenvolvido por mim e pelo Lucas Bittencourt para fins de estudo no ensino técnico (nostalgico hehehe :fire:)
+ - Feito em meados de 2019 :godmode:
 
 
  # Como Contribuir 
@@ -21,6 +22,7 @@
      - Clone o repositório :white_check_mark:
 
         - git clone https://github.com/Jairotsb/crud-php.git :heavy_check_mark:
+
 
     * Passo 2: 
 
@@ -38,5 +40,24 @@
 
  * Mensagem ao usuário administrador da agenda com o paciente :o:
 
+ * Continuar Subdivisão por components frontend :o:
 
+ * Melhorar código PDO e seleção dos dados :o:
+
+
+ # Interface 
+
+  # Registrar usuário :heavy_check_mark:
+
+   <img src="assets/U-Pacients.png"/>
+
+  # Registrar paciente :heavy_check_mark:
+
+   <img src="assets/U-Pacients-2.png"/>
+
+  # Adicionar Agenda :heavy_check_mark:
+
+   <img src="assets/U-Pacients-3.png"/>
+
+    
       
