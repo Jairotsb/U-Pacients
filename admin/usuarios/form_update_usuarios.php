@@ -111,11 +111,7 @@ if (!isset($_SESSION['Login'])) {
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2019 Lucas Bittencourt
-            </div>
-        </div>
+        <?php include_once("../components/footer.php")?>
     </footer>
 
     <script type="text/javascript" src="../../src/materialize.min.js"></script>

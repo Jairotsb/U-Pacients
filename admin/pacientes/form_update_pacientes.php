@@ -82,7 +82,7 @@ if (!isset($_SESSION['Login'])) {
                             <input value="<?= $pat_cpf ?>" placeholder="Cpf" type="text" name="pat_cpf" class="validate" oninvalid="this.setCustomValidity('Preencha esse campo com o seu nome.')" oninput="setCustomValidity('')" required>
                         </div>
                     </div>
-                  
+
 
                     <input class="btn indigo darken-4" type="submit" value="Atualizar" />
                     <a href="form_pacientes.php" class="btn indigo darken-4">Cancelar</a>
@@ -114,11 +114,7 @@ if (!isset($_SESSION['Login'])) {
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2019 Lucas Bittencourt
-            </div>
-        </div>
+        <?php include_once("../components/footer.php") ?>
     </footer>
 
     <script type="text/javascript" src="../../src/materialize.min.js"></script>
